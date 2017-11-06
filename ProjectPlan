@@ -1,0 +1,6 @@
+Data gathering: Beautiful soup to automatically update from the website
+Data treatment : For all the relevant files: remove the unneccasary rows and columns
+Database       : Push to mongoDB database
+Backend        : Get the filters in post it
+Frontend routes: simple bitton click
+Server         : continuous running
