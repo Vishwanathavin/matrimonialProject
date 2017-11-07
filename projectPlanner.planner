@@ -20,67 +20,70 @@
     </calendar>
   </calendars>
   <tasks>
-    <task id="1" name="Data gathering" note="" work="115200" start="20171117T100000Z" end="20171123T100000Z" work-start="20171117T100000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
-      <task id="2" name="Web scraping" note="" work="86400" start="20171117T100000Z" end="20171122T100000Z" work-start="20171117T100000Z" percent-complete="0" priority="50" type="normal" scheduling="fixed-work">
+    <task id="1" name="FolderArchitecture" note="" work="14400" start="20171106T000000Z" end="20171106T120000Z" work-start="20171106T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+    <task id="2" name="Data gathering" note="" work="115200" start="20171115T120000Z" end="20171121T120000Z" work-start="20171115T120000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="3" name="Web scraping" note="" work="86400" start="20171115T120000Z" end="20171120T120000Z" work-start="20171115T120000Z" percent-complete="0" priority="50" type="normal" scheduling="fixed-work">
         <predecessors>
-          <predecessor id="1" predecessor-id="18" type="FS"/>
+          <predecessor id="1" predecessor-id="21" type="FS"/>
         </predecessors>
       </task>
-      <task id="3" name="periodic Download" note="" work="28800" duration="28800" start="20171122T100000Z" end="20171123T100000Z" work-start="20171122T100000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-duration">
+      <task id="4" name="periodic Download" note="" work="28800" duration="28800" start="20171120T120000Z" end="20171121T120000Z" work-start="20171120T120000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-duration">
         <predecessors>
-          <predecessor id="1" predecessor-id="2" type="FS"/>
+          <predecessor id="1" predecessor-id="3" type="FS"/>
         </predecessors>
       </task>
     </task>
-    <task id="4" name="Data treatment" note="" work="90000" start="20171107T000000Z" end="20171122T110000Z" work-start="20171107T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
-      <task id="5" name="MergedCell removal" note="" work="28800" start="20171107T000000Z" end="20171107T170000Z" work-start="20171107T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+    <task id="5" name="Data treatment" note="" work="97200" start="20171106T000000Z" end="20171120T140000Z" work-start="20171106T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="6" name="MergedCell removal" note="" work="28800" start="20171107T000000Z" end="20171107T170000Z" work-start="20171107T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
         <constraint type="must-start-on" time="20171107T000000Z"/>
       </task>
-      <task id="6" name="standarization" note="" work="28800" start="20171107T000000Z" end="20171107T170000Z" work-start="20171107T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="7" name="standarization" note="" work="36000" start="20171106T000000Z" end="20171106T170000Z" work-start="20171106T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
         <constraint type="must-start-on" time="20171107T000000Z"/>
+        <task id="8" name="renaming Cols and values" note="" work="7200" start="20171106T000000Z" end="20171106T100000Z" work-start="20171106T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="9" name="getting uniformity in stars and qualification" note="" work="28800" start="20171106T000000Z" end="20171106T170000Z" work-start="20171106T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work"/>
       </task>
-      <task id="7" name="Data type assigning" note="" work="28800" start="20171107T170000Z" end="20171108T170000Z" work-start="20171108T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="10" name="Data type assigning" note="" work="28800" start="20171106T100000Z" end="20171107T100000Z" work-start="20171106T100000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
         <predecessors>
-          <predecessor id="1" predecessor-id="6" type="FS"/>
+          <predecessor id="1" predecessor-id="8" type="FS"/>
         </predecessors>
       </task>
-      <task id="8" name="Merge all the data" note="" work="3600" start="20171122T100000Z" end="20171122T110000Z" work-start="20171122T100000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="11" name="Merge all the data" note="" work="3600" start="20171120T120000Z" end="20171120T140000Z" work-start="20171120T120000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
         <predecessors>
-          <predecessor id="1" predecessor-id="2" type="FS"/>
-        </predecessors>
-      </task>
-    </task>
-    <task id="9" name="Database" note="" work="28800" start="20171108T170000Z" end="20171109T170000Z" work-start="20171109T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
-      <task id="10" name="pushing to DB" note="" work="28800" start="20171108T170000Z" end="20171109T170000Z" work-start="20171109T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
-        <predecessors>
-          <predecessor id="1" predecessor-id="7" type="FS"/>
+          <predecessor id="1" predecessor-id="3" type="FS"/>
         </predecessors>
       </task>
     </task>
-    <task id="11" name="REST" note="" work="57600" start="20171109T170000Z" end="20171113T170000Z" work-start="20171110T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
-      <task id="12" name="Code the routes" note="" work="57600" start="20171109T170000Z" end="20171113T170000Z" work-start="20171110T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+    <task id="12" name="Database" note="" work="28800" start="20171107T100000Z" end="20171108T100000Z" work-start="20171107T100000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="13" name="pushing to DB" note="" work="28800" start="20171107T100000Z" end="20171108T100000Z" work-start="20171107T100000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
         <predecessors>
           <predecessor id="1" predecessor-id="10" type="FS"/>
         </predecessors>
       </task>
     </task>
-    <task id="13" name="JS front end" note="" work="14400" start="20171107T170000Z" end="20171114T100000Z" work-start="20171108T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
-      <task id="14" name="Drop Downs" note="" work="7200" start="20171107T170000Z" end="20171108T100000Z" work-start="20171108T080000Z" percent-complete="36" priority="0" type="normal" scheduling="fixed-work">
+    <task id="14" name="REST" note="" work="57600" start="20171108T100000Z" end="20171110T100000Z" work-start="20171108T100000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="15" name="Code the routes" note="" work="57600" start="20171108T100000Z" end="20171110T100000Z" work-start="20171108T100000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
         <predecessors>
-          <predecessor id="1" predecessor-id="6" type="FS"/>
-        </predecessors>
-      </task>
-      <task id="15" name="Triggers" note="" work="7200" start="20171113T170000Z" end="20171114T100000Z" work-start="20171114T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
-        <predecessors>
-          <predecessor id="1" predecessor-id="12" type="FS"/>
+          <predecessor id="1" predecessor-id="13" type="FS"/>
         </predecessors>
       </task>
     </task>
-    <task id="16" name="Server" note="" work="115200" start="20171106T000000Z" end="20171117T100000Z" work-start="20171106T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
-      <task id="17" name="registering domain DNS" note="" work="28800" start="20171106T000000Z" end="20171106T170000Z" work-start="20171106T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
-      <task id="18" name="Service file nginx" note="" work="86400" start="20171114T100000Z" end="20171117T100000Z" work-start="20171114T100000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+    <task id="16" name="JS front end" note="" work="14400" start="20171106T100000Z" end="20171110T120000Z" work-start="20171106T100000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="17" name="Drop Downs" note="" work="7200" start="20171106T100000Z" end="20171106T120000Z" work-start="20171106T100000Z" percent-complete="36" priority="0" type="normal" scheduling="fixed-work">
         <predecessors>
-          <predecessor id="1" predecessor-id="13" type="FS"/>
+          <predecessor id="1" predecessor-id="8" type="FS"/>
+        </predecessors>
+      </task>
+      <task id="18" name="Triggers" note="" work="7200" start="20171110T100000Z" end="20171110T120000Z" work-start="20171110T100000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="15" type="FS"/>
+        </predecessors>
+      </task>
+    </task>
+    <task id="19" name="Server" note="" work="115200" start="20171106T000000Z" end="20171115T120000Z" work-start="20171106T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="20" name="registering domain DNS" note="" work="28800" start="20171106T000000Z" end="20171106T170000Z" work-start="20171106T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="21" name="Service file nginx" note="" work="86400" start="20171110T120000Z" end="20171115T120000Z" work-start="20171110T120000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="16" type="FS"/>
         </predecessors>
       </task>
     </task>
@@ -89,5 +92,7 @@
   <resources>
     <resource id="1" name="Vishwa" short-name="" type="1" units="0" email="" note="" std-rate="0"/>
   </resources>
-  <allocations/>
+  <allocations>
+    <allocation task-id="8" resource-id="1" units="100"/>
+  </allocations>
 </project>
