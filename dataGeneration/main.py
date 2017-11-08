@@ -90,6 +90,10 @@ def renamingContent(inpFile):
     # Place of job
 
     return inpFile
+# def settingDatatypes(inpFile):
+#     # Datetime
+#
+#     #
 
 def main():
 
@@ -99,7 +103,9 @@ def main():
 
     inpFile=renamingContent(inpFile)
 
-    inpFile.to_csv('treatedData.csv')
+    # inpFile=settingDatatypes(inpFile)
+
+    inpFile.to_csv('../outputData/treatedData.csv',index=False)
     print("Done boss")
 if __name__ == '__main__':
     main()
