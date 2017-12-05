@@ -3,30 +3,36 @@ from flask_pymongo import PyMongo
 
 
 app=Flask(__name__)
-app.config['MONGO_DBNAME'] = 'ssmatri'
-app.config['MONGO_URI'] = 'mongodb://localhost:27017/ssmatri'
-mongo = PyMongo(app)
+# app.config['MONGO_DBNAME'] = 'ssmatri'
+# app.config['MONGO_URI'] = 'mongodb://localhost:27017/ssmatri'
+# mongo = PyMongo(app)
 
-@app.route('/', methods=['POST', 'GET'])
+@app.route('/', methods=['POST'])
 def root():
-    if request.method == 'POST':
-        name_ = request.form.get('name')
-        ID_ = request.form.get('ID')
 
-        # Get all the input
+    name = request.form.get('name')
+    # ID = request.form.get('ID')
+    stars_ = request.form.get('stars')
+    gothram_ = request.form.get('gothram')
+    subsect_ = request.form.get('subsect')
+    # qualification_ = request.form.get('qualification')
+    age_From = request.form.get('ageFrom')
+    age_TO = request.form.get('ageTo')
+    height_From = request.form.get('heightFrom')
+    height_To = request.form.get('heightTo')
 
-        # print and see respose
+    # Get all the input
 
-        # do a find filter in mongodb
+    # print and see respose
 
-        # print result
+    # do a find filter in mongodb
 
-               
-        response = {'message': "Welcome to matri! " + name_}
-        return jsonify(response)
-        # print ("Name, ID",name_," ",ID_ )
 
-    return 1
+    response = {'message': "Welcome to matri!."+name}
+
+    return jsonify(response)
+    # print ("Name, ID",name_," ",ID_ )
+
 
 if __name__ == "__main__":
-	app.run(host="0.0.0.0")
+	app.run(host="0.0.0.0",debug=True)
